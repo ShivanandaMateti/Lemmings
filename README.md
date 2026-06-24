@@ -28,25 +28,6 @@ The codebase simulates four distinct evolutionary tiers of the character's auton
 
 ---
 
-
-## 🔧 Comprehensive I/O Signal Breakdown
-
-| Port Name | Direction | Data Type | Active Domain | Description |
-| :--- | :---: | :---: | :---: | :--- |
-| `clk` | Input | `1 bit` | Edge Triggered| Master simulation system clock source. |
-| `areset` | Input | `1 bit` | Asynchronous | Master Clear (Resets the character back to walking left). |
-| `bump_left` | Input | `1 bit` | Synchronous | Signals a physical wall blocking the character's left side. |
-| `bump_right`| Input | `1 bit` | Synchronous | Signals a physical wall blocking the character's right side. |
-| `ground` | Input | `1 bit` | Synchronous | State of terrain stability (`1` = solid ground, `0` = thin air). |
-| `dig` | Input | `1 bit` | Synchronous | User-triggered action command to begin digging. |
-| `walk_left` | Output| `1 bit` | Moore Flag | Driven high when the character is actively traveling left. |
-| `walk_right`| Output| `1 bit` | Moore Flag | Driven high when the character is actively traveling right. |
-| `aaah` | Output| `1 bit` | Moore Flag | Driven high when the character is falling through space. |
-| `digging` | Output| `1 bit` | Moore Flag | Driven high when the character is clearing terrain downward. |
-| `die` | Output| `1 bit` | Moore Flag | Driven high permanently if the character sustains fatal impact. |
-
----
-
 ## 🔬 Implementation Methodology
 
 All engine modules adhere to strict synthesizable RTL rules:
